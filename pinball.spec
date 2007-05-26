@@ -1,6 +1,6 @@
 %define	name	pinball
 %define	version	0.3.1
-%define	release	%mkrel 7
+%define	release	%mkrel 8
 %define	Summary	Emilia 3d Pinball
 
 Summary:	%{Summary}
