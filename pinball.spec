@@ -38,15 +38,15 @@ make CXXFLAGS="$RPM_OPT_FLAGS"
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std EM_HIGHSCORE_DIR=%{_localstatedir}/games/%{name}
 
-%{__install} -d $RPM_BUILD_ROOT%{_menudir}
-%{__cat} <<EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		icon=%{name}.png \
-		needs="x11" \
-		section="Amusement/Arcade" \
-		title="%{Summary}"\
-		longtitle="%{Summary}"\
-		xdg="true"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/%{name}		
+Icon=%{name}				
+Categories=Game;ArcadeGame;		
+Name=%{Summary}		
+Comment=%{Summary}
 EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
@@ -91,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesdatadir}/%{name}/*
 %dir %{_localstatedir}/games/%{name}
 %{_localstatedir}/games/%{name}/*
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
