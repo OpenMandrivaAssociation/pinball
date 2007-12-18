@@ -38,17 +38,6 @@ make CXXFLAGS="$RPM_OPT_FLAGS"
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std EM_HIGHSCORE_DIR=%{_localstatedir}/games/%{name}
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
-[Desktop Entry]
-Type=Application
-Exec=%{_gamesbindir}/%{name}		
-Icon=%{name}				
-Categories=Game;ArcadeGame;		
-Name=%{Summary}		
-Comment=%{Summary}
-EOF
-
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -91,7 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesdatadir}/%{name}/*
 %dir %{_localstatedir}/games/%{name}
 %{_localstatedir}/games/%{name}/*
-%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
