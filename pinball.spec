@@ -14,6 +14,7 @@ Source13:	pinball-48x48.png
 License:	GPL
 Group:		Games/Arcade
 URL:		http://pinball.sourceforge.net/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	mesaglu-devel mesa-common-devel SDL-devel >= 1.2 
 Buildrequires:	png-devel SDL_image-devel SDL_mixer-devel oggvorbis-devel smpeg-devel
 Buildrequires:	jpeg-devel tiff-devel
