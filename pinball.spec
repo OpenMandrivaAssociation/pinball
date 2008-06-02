@@ -37,7 +37,7 @@ make CXXFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std EM_HIGHSCORE_DIR=%{_localstatedir}/games/%{name}
+%makeinstall_std EM_HIGHSCORE_DIR=%{_localstatedir}/lib/games/%{name}
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -79,8 +79,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/%{name}/*.la
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
-%dir %{_localstatedir}/games/%{name}
-%{_localstatedir}/games/%{name}/*
+%dir %{_localstatedir}/lib/games/%{name}
+%{_localstatedir}/lib/games/%{name}/*
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
