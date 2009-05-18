@@ -1,6 +1,6 @@
 %define	name	pinball
 %define	version	0.3.1
-%define	release	%mkrel 10
+%define	release	%mkrel 11
 %define	Summary	Emilia 3d Pinball
 
 Summary:	%{Summary}
@@ -11,7 +11,7 @@ Source0:	http://prdownloads.sourceforge.net/pinball/%{name}-%{version}.tar.bz2
 Source11:	pinball-16x16.png
 Source12:	pinball-32x32.png
 Source13:	pinball-48x48.png
-License:	GPL
+License:	GPLv2
 Group:		Games/Arcade
 URL:		http://pinball.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -26,6 +26,9 @@ There is only two levels to play with but it is however very addictive.
 
 %prep
 %setup -q
+
+# fix perm on ChangeLog
+chmod -x ChangeLog
 
 %build
 %configure2_5x	--datadir=%{_gamesdatadir} \
@@ -48,7 +51,7 @@ Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Game;ArcadeGame;		
+Categories=Game;ArcadeGame;
 EOF
 
 install -m644 %{SOURCE11} -D $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
