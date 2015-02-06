@@ -4,7 +4,7 @@
 Summary:	Emilia 3d Pinball
 Name:		pinball
 Version:	0.3.1
-Release:	13
+Release:	14
 Source0:	http://prdownloads.sourceforge.net/pinball/%{name}-%{version}.tar.bz2
 Source11:	pinball-16x16.png
 Source12:	pinball-32x32.png
