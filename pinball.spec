@@ -15,7 +15,7 @@ Patch2:		pinball-0.3.1-strictproto.patch
 Patch3:		pinball-0.3.1-compile.patch
 License:	GPL+
 Group:		Games/Arcade
-URL:		http://pinball.sourceforge.net/
+URL:		https://pinball.sourceforge.net/
 BuildRequires:	mesaglu-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel SDL_mixer-devel
